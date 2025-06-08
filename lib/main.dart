@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/login_screen.dart';
+import 'screens/home_screen.dart';
 
 
 void main() {
@@ -72,7 +72,7 @@ class CorpNetApp extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
