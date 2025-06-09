@@ -1,24 +1,82 @@
+// import 'package:flutter/material.dart';
+
+// class Navbar extends StatelessWidget {
+//   const Navbar({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return BottomNavigationBar(
+//       items: [
+//         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Feed'),
+//         BottomNavigationBarItem(icon: Icon(Icons.group), label: 'Network'),
+//         BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Post'),
+//                 BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
+//         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+//       ],
+//       currentIndex: 0, // Update this based on the current screen
+//       onTap: (index) {
+//         // Handle navigation
+//       },
+      
+//       selectedItemColor: Color(0xFFDC2626),
+//       unselectedItemColor: Colors.white,
+//       backgroundColor: Color(0xFFDC0026),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 
-class Navbar extends StatelessWidget {
+class Navbar extends StatefulWidget {
   const Navbar({super.key});
+
+  @override
+  _NavbarState createState() => _NavbarState();
+}
+
+class _NavbarState extends State<Navbar> {
+  int _currentIndex = 0; // Track the current index
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index; // Update the current index
+    });
+
+    // Navigate to the relevant page based on the index
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, '/feed'); // Replace with your feed route
+        break;
+      case 1:
+        Navigator.pushNamed(context, '/network'); // Replace with your network route
+        break;
+      case 2:
+        Navigator.pushNamed(context, '/post'); // Replace with your post route
+        break;
+      case 3:
+        Navigator.pushNamed(context, '/business'); // Replace with your business route
+        break;
+      case 4:
+        Navigator.pushNamed(context, '/profile'); // Replace with your profile route
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: [
+      items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Feed'),
         BottomNavigationBarItem(icon: Icon(Icons.group), label: 'Network'),
         BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Post'),
+        BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
       ],
-      currentIndex: 0, // Update this based on the current screen
-      onTap: (index) {
-        // Handle navigation
-      },
-      backgroundColor: Color(0xFF1F2937),
-      selectedItemColor: Color(0xFFDC2626),
+      currentIndex: _currentIndex, // Use the current index
+      onTap: _onItemTapped, // Handle navigation
+      selectedItemColor: const Color(0xFFDC2626),
       unselectedItemColor: Colors.white,
+      backgroundColor: const Color(0xFF7F1D1D), // Set the background color
     );
   }
 }
