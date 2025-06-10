@@ -45,7 +45,7 @@ class _NavbarState extends State<Navbar> {
     // Navigate to the relevant page based on the index
     switch (index) {
       case 0:
-        Navigator.pushNamed(context, '/feed'); // Replace with your feed route
+        Navigator.pushNamed(context, '/'); // Replace with your feed route
         break;
       case 1:
         Navigator.pushNamed(context, '/network'); // Replace with your network route
@@ -76,7 +76,7 @@ class _NavbarState extends State<Navbar> {
       onTap: _onItemTapped, // Handle navigation
       selectedItemColor: const Color(0xFFDC2626),
       unselectedItemColor: Colors.white,
-      backgroundColor: const Color(0xFF7F1D1D), // Set the background color
+      backgroundColor: const Color(0xFF111827), // Set the background color
     );
   }
-}
+} 
