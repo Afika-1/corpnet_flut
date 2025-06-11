@@ -37,9 +37,26 @@ class LoginScreen extends StatelessWidget {
                   // Handle login
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFDC2626), // Use backgroundColor instead of primary
+                  backgroundColor: const Color(0xFFDC2626), // Button background color
+                   minimumSize: const Size(150, 48),
                 ),
-                child: const Text('Login'),
+                child: const Text(
+                  'Login',
+                  style: TextStyle(color: Colors.white), // Set text color to white
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextButton(
+                onPressed: () {
+                  // Handle forgot password action
+                },
+                child: const Text(
+                  'Forgot Password?',
+                  style: TextStyle(
+                    color: Colors.white, // Set text color to white
+                    decoration: TextDecoration.underline, // Underline the text
+                  ),
+                ),
               ),
             ],
           ),

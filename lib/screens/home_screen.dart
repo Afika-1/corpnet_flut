@@ -84,7 +84,7 @@ import '../widgets/post_widget.dart';
 import '../widgets/navbar.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    const maroon = Color(0xFF7F1D1D);
+    const maroon = Color(0xFFDC2626);
 
     return Scaffold(
       backgroundColor: const Color(0xFF111827),
@@ -107,6 +107,34 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
+
+            // CorpNet Title
+            RichText(
+              text: TextSpan(
+                style: theme.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24,
+                  fontFamily: 'Inter',
+                ) ??
+                    const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24,
+                      fontFamily: 'Inter',
+                    ),
+                children: [
+                  const TextSpan(
+                    text: 'Corp',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  TextSpan(
+                    text: 'Net',
+                    style: TextStyle(color: maroon),
+                  ),
+                ],
+              ),
+            ),
             // Search Icon and TextField
             Row(
               children: [
@@ -144,34 +172,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
               ],
             ),
-
-            // CorpNet Title
-            RichText(
-              text: TextSpan(
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                  fontFamily: 'Inter',
-                ) ??
-                    const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 24,
-                      fontFamily: 'Inter',
-                    ),
-                children: [
-                  const TextSpan(
-                    text: 'Corp',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  TextSpan(
-                    text: 'Net',
-                    style: TextStyle(color: maroon),
-                  ),
-                ],
-              ),
-            ),
-
             // Notification Icon
             IconButton(
               icon: const Icon(Icons.notifications, color: Colors.white),
