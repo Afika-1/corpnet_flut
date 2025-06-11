@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/splash_screen.dart';
-
 import 'screens/login_screen.dart';
-import 'screens/network_page.dart';
-import 'screens/profile_screen.dart';
-import 'screens/business_page.dart';
-import 'screens/post_screen.dart';
 
 
 
@@ -80,8 +75,8 @@ class CorpNetApp extends StatelessWidget {
         ),
       ),
       
-      // home: SplashScreen(),
-      home: LoginScreen(),
+      home: SplashScreen(),
+      //
     );
   }
 }

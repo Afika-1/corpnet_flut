@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../screens/home_screen.dart'; // Import your home screen
+import '../screens/login_screen.dart';
+import '../screens/post_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,7 +68,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()), // Navigate to HomeScreen
+        // MaterialPageRoute(builder: (context) => const HomeScreen()), // Navigate to HomeScreen
+        MaterialPageRoute(builder: (context) => const CreatePostScreen()),
       );
     });
   }
