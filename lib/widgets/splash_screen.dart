@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../screens/post_screen.dart';
+import '../screens/business_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -68,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         // MaterialPageRoute(builder: (context) => const HomeScreen()), // Navigate to HomeScreen
-        MaterialPageRoute(builder: (context) => const CreatePostScreen()),
+        MaterialPageRoute(builder: (context) => const BusinessPage()),
       );
     });
   }
