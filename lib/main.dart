@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'widgets/splash_screen.dart';
 
+import 'screens/home_screen.dart';
+import 'screens/network_page.dart';
+import 'screens/post_screen.dart';
+import 'screens/business_page.dart';
+import 'screens/profile_screen.dart';
+import 'widgets/navbar.dart';
 
 
 void main() {
@@ -73,7 +79,14 @@ class CorpNetApp extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/network': (context) => NetworkPage(),
+        '/post': (context) => CreatePostScreen(),
+        '/business': (context) => BusinessPage(),
+        '/profile': (context) => ProfileScreen(),
+      },
       home: SplashScreen(),
       //
     );
