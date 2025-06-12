@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../screens/login_screen.dart';
 import '../screens/post_screen.dart';
 
 void main() {

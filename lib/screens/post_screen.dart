@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/navbar.dart';
 
 class CreatePostScreen extends StatefulWidget {
-  const CreatePostScreen({Key? key}) : super(key: key);
+  const CreatePostScreen({super.key});
 
   @override
   State<CreatePostScreen> createState() => _CreatePostScreenState();
@@ -118,163 +118,173 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-           
-            const SizedBox(height: 24),
-            Row(
-              children: [
-                Container(
-                  width: 48,
-                  height: 48,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFE53E3E),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'JD',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+        // child: Container(
+        //   decoration: BoxDecoration(
+        //     color: const Color(0xFF1A1D29), // Background color of the content
+        //     border: Border.all(color: Colors.red, width: 2), // Red border
+        //     borderRadius: BorderRadius.circular(12), // Rounded corners
+        //   ),
+          // padding: const EdgeInsets.all(20.0), // Inner padding
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 24),
+              Row(
+                children: [
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFE53E3E),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'JD',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),
+                  const SizedBox(width: 12),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'John Doe',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        'Posting to feed',
+                        style: TextStyle(
+                          color: Color(0xFF9CA3AF),
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 24),
+              TextField(
+                controller: _postController,
+                maxLines: 8,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
                 ),
-                const SizedBox(width: 12),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'John Doe',
+                decoration: InputDecoration(
+                  hintText: "What's happening in your business world?",
+                  hintStyle: const TextStyle(
+                    color: Color(0xFF9CA3AF),
+                    fontSize: 16,
+                  ),
+                  filled: true,
+                  fillColor: const Color(0xFF2D3748),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF4A5568),
+                      width: 1,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF4A5568),
+                      width: 1,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF4A5568),
+                      width: 1,
+                    ),
+                  ),
+                  contentPadding: const EdgeInsets.all(16),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF4A5568),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(
+                      Icons.image_outlined,
+                      color: Color(0xFF9CA3AF),
+                      size: 20,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF4A5568),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(
+                      Icons.location_on_outlined,
+                      color: Color(0xFF9CA3AF),
+                      size: 20,
+                    ),
+                  ),
+                  const Spacer(),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle post submission
+                      String postContent = _postController.text.trim();
+                      if (postContent.isNotEmpty) {
+                        // Process the post
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Post created successfully!'),
+                            backgroundColor: Color(0xFF2A5FF0),
+                          ),
+                        );
+                        Navigator.pop(context);
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFE53E3E),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 32,
+                        vertical: 12,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Post',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
                       ),
                     ),
-                    Text(
-                      'Posting to feed',
-                      style: TextStyle(
-                        color: Color(0xFF9CA3AF),
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(height: 24),
-            TextField(
-              controller: _postController,
-              maxLines: 8,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
+                  ),
+                ],
               ),
-              decoration: InputDecoration(
-                hintText: "What's happening in your business world?",
-                hintStyle: const TextStyle(
-                  color: Color(0xFF9CA3AF),
-                  fontSize: 16,
-                ),
-                filled: true,
-                fillColor: const Color(0xFF2D3748),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(
-                    color: Color(0xFF4A5568),
-                    width: 1,
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(
-                    color: Color(0xFF4A5568),
-                    width: 1,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(
-                    color: Color(0xFF4A5568),
-                    width: 1,
-                  ),
-                ),
-                contentPadding: const EdgeInsets.all(16),
-              ),
-            ),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF4A5568),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Icon(
-                    Icons.image_outlined,
-                    color: Color(0xFF9CA3AF),
-                    size: 20,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF4A5568),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Icon(
-                    Icons.location_on_outlined,
-                    color: Color(0xFF9CA3AF),
-                    size: 20,
-                  ),
-                ),
-                const Spacer(),
-                ElevatedButton(
-                  onPressed: () {
-                    // Handle post submission
-                    String postContent = _postController.text.trim();
-                    if (postContent.isNotEmpty) {
-                      // Process the post
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Post created successfully!'),
-                          backgroundColor: Color(0xFF2A5FF0),
-                        ),
-                      );
-                      Navigator.pop(context);
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFE53E3E),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 32,
-                      vertical: 12,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: const Text(
-                    'Post',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+              const SizedBox(height: 16),
+              // Add a SizedBox to create space for the border
+              // const SizedBox(height: 2), // Height of the border
+            ],
+          ),
+        // ),
       ),
       bottomNavigationBar: const Navbar(),
     );

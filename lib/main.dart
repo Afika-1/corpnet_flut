@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'widgets/splash_screen.dart';
-import 'screens/login_screen.dart';
 
 
 
