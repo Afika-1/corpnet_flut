@@ -6,7 +6,6 @@ import 'screens/network_page.dart';
 import 'screens/post_screen.dart';
 import 'screens/business_page.dart';
 import 'screens/profile_screen.dart';
-import 'widgets/navbar.dart';
 
 
 void main() {
@@ -79,10 +78,10 @@ class CorpNetApp extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      initialRoute: '/',
+      // initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
-        '/network': (context) => NetworkPage(),
+        '/home': (context) => HomeScreen(),
+        '/network': (context) => NetworkScreen(),
         '/post': (context) => CreatePostScreen(),
         '/business': (context) => BusinessPage(),
         '/profile': (context) => ProfileScreen(),

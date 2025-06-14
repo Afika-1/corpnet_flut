@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:corpnet_flut/widgets/navbar.dart';
 
 class AccountSelectionScreen extends StatefulWidget {
+  const AccountSelectionScreen({super.key});
+
   @override
   _AccountSelectionScreenState createState() => _AccountSelectionScreenState();
 }
