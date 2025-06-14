@@ -260,19 +260,19 @@ class NetworkScreen extends StatelessWidget {
 }
 
 // Usage example - add this to your main app
-class NetworkApp extends StatelessWidget {
-  const NetworkApp({Key? key}) : super(key: key);
+// class NetworkApp extends StatelessWidget {
+//   const NetworkApp({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'CorpNet',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: const NetworkScreen(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'CorpNet',
+//       theme: ThemeData(
+//         primarySwatch: Colors.red,
+//         visualDensity: VisualDensity.adaptivePlatformDensity,
+//       ),
+//       home: const NetworkScreen(),
+//       debugShowCheckedModeBanner: false,
+//     );
+//   }
+// }
