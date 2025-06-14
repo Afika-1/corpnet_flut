@@ -1,7 +1,8 @@
 import 'package:corpnet_flut/screens/account_selection.dart';
+import 'package:corpnet_flut/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-// import '../screens/business_page.dart';
+import '../screens/business_page.dart';
 import '../screens/home_screen.dart';
 import '../screens/account_selection.dart';
 
@@ -70,8 +71,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const AccountSelectionScreen()), // Navigate to HomeScreen
-        // MaterialPageRoute(builder: (context) => const BusinessPage()),
+        // MaterialPageRoute(builder: (context) => const AccountSelectionScreen()), // Navigate to HomeScreen
+        MaterialPageRoute(builder: (context) =>  ProfileScreen()),
       );
     });
   }

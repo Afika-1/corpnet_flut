@@ -83,7 +83,7 @@ class CorpNetApp extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/network': (context) => NetworkScreen(),
         '/post': (context) => CreatePostScreen(),
-        '/business': (context) => BusinessPage(),
+        '/business': (context) => BusinessScreen(),
         '/profile': (context) => ProfileScreen(),
       },
       home: SplashScreen(),
