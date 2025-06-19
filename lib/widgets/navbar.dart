@@ -31,7 +31,7 @@ class _NavbarState extends State<Navbar> {
         Navigator.pushNamed(context, '/business');
         break;
       case 4:
-        Navigator.pushNamed(context, '/profile');
+        Navigator.pushNamed(context, '/notification');
         break;
     }
   }
@@ -44,7 +44,7 @@ class _NavbarState extends State<Navbar> {
         BottomNavigationBarItem(icon: Icon(Icons.group), label: 'Network'),
         BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Post'),
         BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Notification'),
       ],
       currentIndex: _currentIndex,
       onTap: _onItemTapped,

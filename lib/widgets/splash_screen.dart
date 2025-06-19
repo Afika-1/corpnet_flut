@@ -6,6 +6,7 @@ import '../screens/business_page.dart';
 import '../screens/home_screen.dart';
 import '../screens/account_selection.dart';
 // import '../screens/profile_screen.dart';
+import '../screens/register_business_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,7 +74,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         // MaterialPageRoute(builder: (context) => const AccountSelectionScreen()), // Navigate to HomeScreen
-        MaterialPageRoute(builder: (context) =>  HomeScreen()),
+        MaterialPageRoute(builder: (context) =>  BusinessRegistrationScreen()),
       );
     });
   }
@@ -83,9 +84,12 @@ class _SplashScreenState extends State<SplashScreen> {
     const maroon = Color(0xFF7F1D1D); // Maroon color
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0A121D), // Match app background
+      backgroundColor: const Color(0xFF0A121D), 
+      
       body: Center(
+        
         child: RichText(
+          
           text: TextSpan(
             style: const TextStyle(
               fontFamily: 'Inter',

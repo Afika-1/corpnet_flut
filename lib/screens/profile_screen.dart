@@ -6,13 +6,13 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final TextEditingController _postController = TextEditingController();
+  // final TextEditingController _postController = TextEditingController();
   final TextEditingController _searchController = TextEditingController();
   bool _isSearchExpanded = false;
 
   @override
   void dispose() {
-    _postController.dispose();
+    // _postController.dispose();
     _searchController.dispose();
     super.dispose();
   }
