@@ -26,9 +26,10 @@ class _BusinessScreenState extends State<BusinessScreen> {
             icon: Icon(Icons.search, color: Colors.white),
             onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(Icons.notifications_outlined, color: Colors.white),
-            onPressed: () {},
+          const CircleAvatar(
+            radius: 16,
+            backgroundColor: Color(0xFFE53E3E),
+            child: Icon(Icons.person, color: Colors.white, size: 20),
           ),
         ],
       ),

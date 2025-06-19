@@ -1,31 +1,114 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final TextEditingController _postController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
+  bool _isSearchExpanded = false;
+
+  @override
+  void dispose() {
+    _postController.dispose();
+    _searchController.dispose();
+    super.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    const maroon = Color(0xFFDC2626);
     return Scaffold(
       backgroundColor: Color(0xFF1a1f2e),
       appBar: AppBar(
-        backgroundColor: Color(0xFF1a1f2e),
+        backgroundColor: const Color(0xFF1F2937),
         elevation: 0,
-        title: Text(
-          'CorpNet',
-          style: TextStyle(
-            color: Colors.red,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            // CorpNet Title
+            RichText(
+              text: TextSpan(
+                style: theme.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24,
+                  fontFamily: 'Inter',
+                ) ??
+                    const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24,
+                      fontFamily: 'Inter',
+                    ),
+                children: [
+                  const TextSpan(
+                    text: 'Corp',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  TextSpan(
+                    text: 'Net',
+                    style: TextStyle(color: maroon),
+                  ),
+                ],
+              ),
+            ),
+            
+            const Spacer(),
+            
+            // Search functionality
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              width: _isSearchExpanded ? MediaQuery.of(context).size.width * 0.4 : 40,
+              height: 40,
+              child: _isSearchExpanded
+                  ? Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF374151),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: TextField(
+                        controller: _searchController,
+                        autofocus: true,
+                        decoration: const InputDecoration(
+                          hintText: 'Search CorpNet',
+                          hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                        ),
+                        style: const TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                    )
+                  : IconButton(
+                      icon: const Icon(Icons.search, color: Colors.white, size: 24),
+                      onPressed: () {
+                        setState(() {
+                          _isSearchExpanded = true;
+                        });
+                      },
+                    ),
+            ),
+            
+            if (_isSearchExpanded)
+              IconButton(
+                icon: const Icon(Icons.close, color: Colors.white, size: 20),
+                onPressed: () {
+                  setState(() {
+                    _isSearchExpanded = false;
+                    _searchController.clear();
+                  });
+                },
+              ),
+            
+           const CircleAvatar(
+            radius: 16,
+            backgroundColor: Color(0xFFE53E3E),
+            child: Icon(Icons.person, color: Colors.white, size: 20),
           ),
+          ],
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.notifications_outlined, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -41,10 +124,10 @@ class ProfileScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                        end: Alignment.bottomRight,
                         colors: [
                           Color(0xFF8B2635),
-                          Color(0xFF5a1a26),
+                          Color.fromARGB(255, 32, 8, 12),
                         ],
                       ),
                     ),
@@ -386,6 +469,10 @@ class ProfileScreen extends StatelessWidget {
           currentIndex: 4, // Profile tab selected
           selectedItemColor: Colors.red,
           unselectedItemColor: Colors.white70,
+          onTap: (index) {
+            // Handle navigation tap
+            print('Navigation tab $index tapped');
+          },
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -411,8 +498,8 @@ class ProfileScreen extends StatelessWidget {
               label: 'Business',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
+              icon: Icon(Icons.notifications),
+              label: 'Notification',
             ),
           ],
         ),

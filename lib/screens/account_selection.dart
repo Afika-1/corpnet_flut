@@ -243,9 +243,10 @@ class AccountSelectionScreen extends StatelessWidget {
             icon: const Icon(Icons.search, color: Colors.white),
             onPressed: () {},
           ),
-          IconButton(
-            icon: const Icon(Icons.notifications_outlined, color: Colors.white),
-            onPressed: () {},
+         const CircleAvatar(
+            radius: 16,
+            backgroundColor: Color(0xFFE53E3E),
+            child: Icon(Icons.person, color: Colors.white, size: 20),
           ),
           const SizedBox(width: 16),
         ],

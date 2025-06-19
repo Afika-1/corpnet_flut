@@ -106,13 +106,11 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                 },
               ),
             
-            // Notification Icon
-            IconButton(
-              icon: const Icon(Icons.notifications, color: Colors.white, size: 24),
-              onPressed: () {
-                // Handle notification tap
-              },
-            ),
+           const CircleAvatar(
+            radius: 16,
+            backgroundColor: Color(0xFFE53E3E),
+            child: Icon(Icons.person, color: Colors.white, size: 20),
+          ),
           ],
         ),
       ),

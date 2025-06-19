@@ -5,6 +5,7 @@ import 'dart:async';
 import '../screens/business_page.dart';
 import '../screens/home_screen.dart';
 import '../screens/account_selection.dart';
+// import '../screens/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         // MaterialPageRoute(builder: (context) => const AccountSelectionScreen()), // Navigate to HomeScreen
-        MaterialPageRoute(builder: (context) =>  ProfileScreen()),
+        MaterialPageRoute(builder: (context) =>  HomeScreen()),
       );
     });
   }
@@ -98,7 +99,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               TextSpan(
                 text: 'Net',
-                style: TextStyle(color: maroon),
+                style: TextStyle(color: Colors.yellow),
               ),
             ],
           ),
@@ -107,3 +108,4 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+
