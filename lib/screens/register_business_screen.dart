@@ -65,12 +65,12 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
               right: -100,
               child: Container(
                 width: 300,
-                height: 300,
+                height: 200,
                 decoration: BoxDecoration(
                   gradient: RadialGradient(
                     center: Alignment.center,
                     radius: 1.0,
-                    colors: [
+                    colors: [           
                       Colors.white.withOpacity(0.15),
                       Colors.white.withOpacity(0.08),
                       Colors.white.withOpacity(0.03),

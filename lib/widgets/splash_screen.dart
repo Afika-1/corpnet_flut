@@ -7,6 +7,7 @@ import '../screens/home_screen.dart';
 import '../screens/account_selection.dart';
 // import '../screens/profile_screen.dart';
 import '../screens/register_business_screen.dart';
+import '../screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         // MaterialPageRoute(builder: (context) => const AccountSelectionScreen()), // Navigate to HomeScreen
-        MaterialPageRoute(builder: (context) =>  BusinessRegistrationScreen()),
+        MaterialPageRoute(builder: (context) =>  IngelosiWelcomeScreen()),
       );
     });
   }
