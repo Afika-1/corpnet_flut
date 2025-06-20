@@ -90,49 +90,26 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
                     SizedBox(height: 40),
                     
                     // Header with logo and menu
-                    Row(
+                 Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Spacer(),
-                        Column(
-                          children: [
-                            Container(
-                              width: 60,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.transparent,
-                              ),
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.account_balance,
-                                    color: Colors.white,
-                                    size: 40,
+                        Container(
+                          width: 200,
+                          height: 200,
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: Center(
+                                  child: Image.asset(
+                                    'lib/asset/images/logo2.png',
+                                    width: 200,
+                                    height: 200,
                                   ),
-                                  Positioned(
-                                    top: 5,
-                                    child: Icon(
-                                      Icons.trending_up,
-                                      color: Colors.amber,
-                                      size: 16,
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
-                            SizedBox(height: 8),
-                            Text(
-                              'Ingelosi Imali',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w300,
-                                letterSpacing: 1.2,
-                                fontFamily: 'Agrandir',
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                         Spacer(),
                         Container(

@@ -41,9 +41,10 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFF1A1A1A), // Dark gray/black
+              Color(0xFF0A4A4A), // Dark gray/black
+              Color(0xFF1A1A1A),
               Color(0xFF0D2A2A), // Dark teal
-              Color(0xFF0A4A4A), // Medium teal
+              // Color(0xFF0A4A4A), // Medium teal
               Color(0xFF00A693), // Bright teal
             ],
             stops: [0.0, 0.3, 0.7, 1.0],
@@ -55,7 +56,7 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
             child: Column(
               children: [
                 SizedBox(height: 60),
-                
+
                 // Logo and brand name in top left
                 Align(
                   alignment: Alignment.topLeft,
@@ -70,60 +71,22 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                           alignment: Alignment.center,
                           children: [
                             // Wings
-                            Positioned(
-                              left: 0,
-                              child: Icon(
-                                Icons.keyboard_double_arrow_left,
-                                color: Colors.white,
-                                size: 30,
-                              ),
-                            ),
-                            Positioned(
-                              right: 0,
-                              child: Icon(
-                                Icons.keyboard_double_arrow_right,
-                                color: Colors.white,
-                                size: 30,
-                              ),
-                            ),
-                            // Dollar sign
-                            Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFD4AF37), // Gold color
-                                shape: BoxShape.circle,
-                              ),
+                            Positioned.fill(
                               child: Center(
-                                child: Text(
-                                  '\$',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Agrandir',
-                                  ),
+                                child: Image.asset(
+                                  'lib/asset/images/logo2.png',
+                                  width: 200,
+                                  height: 200,
                                 ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(height: 12),
-                      Text(
-                        'Ingelosi Imali',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300,
-                          letterSpacing: 1.2,
-                          fontFamily: 'Agrandir',
-                        ),
-                      ),
                     ],
                   ),
                 ),
-                
+
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -142,9 +105,9 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                           ],
                         ),
                       ),
-                      
+
                       SizedBox(height: 80),
-                      
+
                       // Main title
                       Text(
                         'Ingelosi Imali',
@@ -158,9 +121,9 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                           height: 1.1,
                         ),
                       ),
-                      
+
                       SizedBox(height: 30),
-                      
+
                       // Subtitle
                       Text(
                         'Unlocking Capital. Empowering Small Businesses.',
@@ -177,7 +140,7 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                     ],
                   ),
                 ),
-                
+
                 // Welcome button
                 Padding(
                   padding: EdgeInsets.only(bottom: 60),
@@ -199,10 +162,7 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                         foregroundColor: Color(0xFFD4AF37),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
-                          side: BorderSide(
-                            color: Color(0xFFD4AF37),
-                            width: 2,
-                          ),
+                          side: BorderSide(color: Color(0xFFD4AF37), width: 2),
                         ),
                         elevation: 0,
                       ),
@@ -219,10 +179,7 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                             ),
                           ),
                           SizedBox(width: 12),
-                          Icon(
-                            Icons.arrow_forward,
-                            size: 20,
-                          ),
+                          Icon(Icons.arrow_forward, size: 20),
                         ],
                       ),
                     ),
@@ -242,7 +199,7 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
       builder: (context, child) {
         double delay = index * 0.2;
         double animationValue = (_animation.value + delay) % 1.0;
-        
+
         return Container(
           width: 12,
           height: 12,
@@ -255,19 +212,3 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
     );
   }
 }
-
-// Placeholder for the next screen - replace with your actual registration screen
-// class BusinessRegistrationScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Registration')),
-//       body: Center(
-//         child: Text(
-//           'Business Registration Screen',
-//           style: TextStyle(fontSize: 24),
-//         ),
-//       ),
-//     );
-//   }
-// }
