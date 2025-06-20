@@ -1,12 +1,12 @@
-import 'package:corpnet_flut/screens/account_selection.dart';
-import 'package:corpnet_flut/screens/profile_screen.dart';
+// import 'package:corpnet_flut/screens/account_selection.dart';
+// import 'package:corpnet_flut/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../screens/business_page.dart';
-import '../screens/home_screen.dart';
-import '../screens/account_selection.dart';
+// import '../screens/business_page.dart';
+// import '../screens/home_screen.dart';
+// import '../screens/account_selection.dart';
 // import '../screens/profile_screen.dart';
-import '../screens/register_business_screen.dart';
+// import '../screens/register_business_screen.dart';
 import '../screens/welcome_screen.dart';
 
 void main() {
@@ -82,7 +82,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const maroon = Color(0xFF7F1D1D); // Maroon color
+    // const maroon = Color(0xFF7F1D1D); // Maroon color
 
     return Scaffold(
       backgroundColor: const Color(0xFF0A121D), 

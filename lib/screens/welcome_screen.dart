@@ -4,7 +4,7 @@ import 'register_business_screen.dart';
 class IngelosiWelcomeScreen extends StatefulWidget {
   const IngelosiWelcomeScreen({super.key});
   @override
-   State<IngelosiWelcomeScreen> createState() => IngelosiWelcomeScreenState();
+  State<IngelosiWelcomeScreen> createState() => IngelosiWelcomeScreenState();
 }
 
 class IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
@@ -90,19 +90,19 @@ class IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Loading dots
-                     SizedBox(
-  height: 20,
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      _buildLoadingDot(0),
-      SizedBox(width: 12),
-      _buildLoadingDot(1),
-      SizedBox(width: 12),
-      _buildLoadingDot(2),
-    ],
-  ),
-),
+                      SizedBox(
+                        height: 20,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            _buildLoadingDot(0),
+                            SizedBox(width: 12),
+                            _buildLoadingDot(1),
+                            SizedBox(width: 12),
+                            _buildLoadingDot(2),
+                          ],
+                        ),
+                      ),
 
                       SizedBox(height: 80),
 
@@ -113,7 +113,7 @@ class IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 64,
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w400,
                           letterSpacing: 2,
                           fontFamily: 'Agrandir',
                           height: 1.1,

@@ -343,7 +343,7 @@ class AccountSelectionScreen extends StatelessWidget {
           color: const Color(0xFF1A1F2E),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: Colors.white.withOpacity(0.1),
+            color: Colors.white.withValues(alpha: 0.1),
             width: 1,
           ),
         ),

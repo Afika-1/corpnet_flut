@@ -2,11 +2,14 @@
 import 'package:flutter/material.dart';
 
 class BusinessRegistrationScreen extends StatefulWidget {
+  const BusinessRegistrationScreen ({super.key});
+
   @override
-  _BusinessRegistrationScreenState createState() => _BusinessRegistrationScreenState();
+  State<BusinessRegistrationScreen>createState() => BusinessRegistrationScreenState();
+  
 }
 
-class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> {
+class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
   final _fullNameController = TextEditingController();
   final _businessNameController = TextEditingController();
@@ -49,9 +52,9 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
                     center: Alignment.center,
                     radius: 0.5,
                     colors: [
-                      Colors.white.withOpacity(0.15),
-                      Colors.white.withOpacity(0.08),
-                      Colors.white.withOpacity(0.08),
+                      Colors.white.withValues(alpha:0.15),
+                      Colors.white.withValues(alpha:0.08),
+                      Colors.white.withValues(alpha:0.08),
                       Colors.transparent,
                     ],
                     stops: [0.0, 0.4, 0.7, 1.0],
@@ -71,9 +74,9 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
                     center: Alignment.center,
                     radius: 1.0,
                     colors: [           
-                      Colors.white.withOpacity(0.15),
-                      Colors.white.withOpacity(0.08),
-                      Colors.white.withOpacity(0.03),
+                      Colors.white.withValues(alpha:0.15),
+                      Colors.white.withValues(alpha:0.08),
+                      Colors.white.withValues(alpha:0.03),
                       Colors.transparent,
                     ],
                     stops: [0.0, 0.4, 0.7, 1.0],
@@ -94,7 +97,7 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Spacer(),
-                        Container(
+                        SizedBox(
                           width: 200,
                           height: 200,
                           child: Stack(
@@ -207,7 +210,7 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
                     SizedBox(height: 50),
                     
                     // Register Button
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       height: 55,
                       child: ElevatedButton(
@@ -255,7 +258,7 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
     bool isPassword = false,
     TextInputType keyboardType = TextInputType.text,
   }) {
-    return Container(
+    return SizedBox(
       height: 55,
       child: TextFormField(
         controller: controller,
@@ -275,7 +278,7 @@ class _BusinessRegistrationScreenState extends State<BusinessRegistrationScreen>
             fontFamily: 'Agrandir',
           ),
           filled: true,
-          fillColor: Color(0xFF2D2D2D).withOpacity(0.7),
+          fillColor: Color(0xFF2D2D2D).withValues(alpha:0.7),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(27.5),
             borderSide: BorderSide.none,

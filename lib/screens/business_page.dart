@@ -2,11 +2,14 @@
 import 'package:flutter/material.dart';
 
 class BusinessScreen extends StatefulWidget {
+  
+  const BusinessScreen({super.key});
+  
   @override
-  _BusinessScreenState createState() => _BusinessScreenState();
+  State<BusinessScreen> createState() => BusinessScreenState();
 }
 
-class _BusinessScreenState extends State<BusinessScreen> {
+class BusinessScreenState extends State<BusinessScreen> {
   int _selectedIndex = 3; // Business tab is selected
 
   @override

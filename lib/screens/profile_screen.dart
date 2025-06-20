@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  State<ProfileScreen> createState() => ProfileScreenState();
+  
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class ProfileScreenState extends State<ProfileScreen> {
   // final TextEditingController _postController = TextEditingController();
   final TextEditingController _searchController = TextEditingController();
   bool _isSearchExpanded = false;
@@ -114,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             // Profile Header Section
-            Container(
+            SizedBox(
               width: double.infinity,
               child: Stack(
                 children: [
@@ -471,7 +473,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           unselectedItemColor: Colors.white70,
           onTap: (index) {
             // Handle navigation tap
-            print('Navigation tab $index tapped');
+            // print('Navigation tab $index tapped');
           },
           items: [
             BottomNavigationBarItem(
@@ -536,7 +538,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Container(
           padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: iconColor.withOpacity(0.1),
+            color: iconColor.withValues(alpha:0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(
