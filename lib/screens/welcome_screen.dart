@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'register_business_screen.dart';
 
 class IngelosiWelcomeScreen extends StatefulWidget {
+  const IngelosiWelcomeScreen({super.key});
   @override
-  _IngelosiWelcomeScreenState createState() => _IngelosiWelcomeScreenState();
+   State<IngelosiWelcomeScreen> createState() => IngelosiWelcomeScreenState();
 }
 
-class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
+class IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
@@ -37,17 +38,14 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF0A4A4A), // Dark gray/black
-              Color(0xFF1A1A1A),
-              Color(0xFF0D2A2A), // Dark teal
-              // Color(0xFF0A4A4A), // Medium teal
-              Color(0xFF00A693), // Bright teal
-            ],
-            stops: [0.0, 0.3, 0.7, 1.0],
+          image: DecorationImage(
+            image: AssetImage('lib/asset/images/welcome.png'),
+            fit: BoxFit.fill,
+            alignment: Alignment.center, // Position the image
+            colorFilter: ColorFilter.mode(
+              Colors.black.withValues(alpha: 0.3), // Add overlay
+              BlendMode.darken,
+            ),
           ),
         ),
         child: SafeArea(
@@ -64,7 +62,7 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Logo with wings and dollar sign
-                      Container(
+                      SizedBox(
                         width: 80,
                         height: 80,
                         child: Stack(
@@ -92,19 +90,19 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Loading dots
-                      Container(
-                        height: 20,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _buildLoadingDot(0),
-                            SizedBox(width: 12),
-                            _buildLoadingDot(1),
-                            SizedBox(width: 12),
-                            _buildLoadingDot(2),
-                          ],
-                        ),
-                      ),
+                     SizedBox(
+  height: 20,
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      _buildLoadingDot(0),
+      SizedBox(width: 12),
+      _buildLoadingDot(1),
+      SizedBox(width: 12),
+      _buildLoadingDot(2),
+    ],
+  ),
+),
 
                       SizedBox(height: 80),
 
@@ -129,7 +127,7 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                         'Unlocking Capital. Empowering Small Businesses.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha: 0.9),
                           fontSize: 20,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.8,
@@ -144,12 +142,11 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                 // Welcome button
                 Padding(
                   padding: EdgeInsets.only(bottom: 60),
-                  child: Container(
+                  child: SizedBox(
                     width: 220,
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Navigate to next screen
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -204,7 +201,9 @@ class _IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
           width: 12,
           height: 12,
           decoration: BoxDecoration(
-            color: Color(0xFF00A693).withOpacity(0.3 + (0.7 * animationValue)),
+            color: Color(
+              0xFF00A693,
+            ).withValues(alpha: 0.3 + (0.7 * animationValue)),
             shape: BoxShape.circle,
           ),
         );
