@@ -93,11 +93,24 @@ flutter:
   fonts:
     - family: Agrandir
       fonts:
-        - asset: assets/fonts/Agrandir-Regular.ttf
-        - asset: assets/fonts/Agrandir-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Agrandir-Light.ttf
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-Regular.otf
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-GrandHeavy.otf
+          weight: 900
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-GrandLight.otf
           weight: 300
-  #
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-Narrow.otf
+          weight: 400
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-TextBold.otf
+          weight: 700
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-ThinItalic.otf
+          weight: 100
+          style: italic
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-Tight.otf
+          weight: 500
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-WideBlackItalic.otf
+          weight: 900
+          style: italic
+        - asset: lib/asset/Agrandir-Font-Family/fonts/Agrandir-WideLight.otf
+          weight: 200
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

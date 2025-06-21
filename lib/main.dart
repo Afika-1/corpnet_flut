@@ -25,6 +25,7 @@ class CorpNetApp extends StatelessWidget {
     return MaterialApp(
       title: 'CorpNet',
       theme: ThemeData(
+        fontFamily: 'Agrandir',
         useMaterial3: true,
         colorScheme: ColorScheme(
           primary: maroonPrimary,
@@ -38,13 +39,14 @@ class CorpNetApp extends StatelessWidget {
           onSurface: Colors.white,
           onError: Colors.white,
           brightness: Brightness.dark,
+        
         ),
         scaffoldBackgroundColor: darkBackground,
         appBarTheme: AppBarTheme(
           backgroundColor: maroonPrimary,
           foregroundColor: Colors.white,
           titleTextStyle: TextStyle(
-            fontFamily: 'Poppins',
+            fontFamily: 'Agrandir',
             fontWeight: FontWeight.w600,
             fontSize: 20,
             color: Colors.white,

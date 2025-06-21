@@ -115,7 +115,7 @@ class IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                           fontSize: 64,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 2,
-                          fontFamily: 'Agrandir',
+                          fontFamily: 'Agrandir-GrandHeavy',
                           height: 1.1,
                         ),
                       ),
