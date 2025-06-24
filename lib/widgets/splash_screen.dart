@@ -75,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         // MaterialPageRoute(builder: (context) => const AccountSelectionScreen()), // Navigate to HomeScreen
-        MaterialPageRoute(builder: (context) =>  IngelosiWelcomeScreen()),
+        MaterialPageRoute(builder: (context) =>  WelcomeScreen()),
       );
     });
   }

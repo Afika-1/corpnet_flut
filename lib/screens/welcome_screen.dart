@@ -1,13 +1,13 @@
+import 'package:corpnet_flut/screens/business_lounge.dart';
 import 'package:flutter/material.dart';
-import 'register_business_screen.dart';
 
-class IngelosiWelcomeScreen extends StatefulWidget {
-  const IngelosiWelcomeScreen({super.key});
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({super.key});
   @override
-  State<IngelosiWelcomeScreen> createState() => IngelosiWelcomeScreenState();
+  State<WelcomeScreen> createState() => WelcomeScreenState();
 }
 
-class IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
+class WelcomeScreenState extends State<WelcomeScreen>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
@@ -150,7 +150,7 @@ class IngelosiWelcomeScreenState extends State<IngelosiWelcomeScreen>
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => BusinessRegistrationScreen(),
+                            builder: (context) => BusinessLoungeScreen(),
                           ),
                         );
                       },
