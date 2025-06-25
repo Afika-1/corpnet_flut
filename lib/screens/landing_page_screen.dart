@@ -45,7 +45,7 @@ class LandingPage extends StatelessWidget {
                               Icon(
                                 Icons.featured_play_list_outlined,
                                 size: 50,
-                                color: Colors.white.withOpacity(0.8),
+                                color: Colors.white.withValues(alpha:0.8),
                               ),
                               // Dollar sign
                               const Text(
@@ -167,7 +167,7 @@ class LandingPage extends StatelessWidget {
                   shape: BoxShape.circle,
                   gradient: RadialGradient(
                     colors: [
-                      Colors.white.withOpacity(0.05),
+                      Colors.white.withValues(alpha:0.05),
                       Colors.transparent,
                     ],
                   ),
@@ -184,7 +184,7 @@ class LandingPage extends StatelessWidget {
                   shape: BoxShape.circle,
                   gradient: RadialGradient(
                     colors: [
-                      Colors.white.withOpacity(0.03),
+                      Colors.white.withValues(alpha:0.03),
                       Colors.transparent,
                     ],
                   ),
@@ -205,7 +205,7 @@ class LandingPage extends StatelessWidget {
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w300,
-          color: Colors.white.withOpacity(0.9),
+          color: Colors.white.withValues(alpha:0.9),
           letterSpacing: 0.5,
         ),
       ),
@@ -223,7 +223,7 @@ class LandingPage extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             Colors.transparent,
-            const Color(0xFFD4AF37).withOpacity(0.1),
+            const Color(0xFFD4AF37).withValues(alpha:0.1),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,

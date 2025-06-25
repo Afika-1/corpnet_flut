@@ -1,4 +1,4 @@
-import 'package:corpnet_flut/screens/business_lounge.dart';
+// import 'package:corpnet_flut/screens/business_lounge.dart';
 import 'package:corpnet_flut/screens/landing_page_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
       vsync: this,
     );
     _animation = Tween<double>(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+      CurvedAnimation(parent: _animationController, curve: Curves.bounceOut),
     );
     _animationController.repeat(reverse: true);
   }
@@ -62,14 +62,12 @@ class WelcomeScreenState extends State<WelcomeScreen>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Logo with wings and dollar sign
                       SizedBox(
                         width: 80,
                         height: 80,
                         child: Stack(
                           alignment: Alignment.center,
                           children: [
-                            // Wings
                             Positioned.fill(
                               child: Center(
                                 child: Image.asset(
@@ -88,7 +86,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
 
                 Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Loading dots
                       SizedBox(
