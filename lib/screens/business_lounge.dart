@@ -11,7 +11,7 @@ class BusinessLoungeScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('lib/asset/images/businessLounge.jpg'),
-            
+
             fit: BoxFit.fill,
           ),
         ),
@@ -26,48 +26,48 @@ class BusinessLoungeScreen extends StatelessWidget {
               ],
             ),
           ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              // Header
-              _buildHeader(context),
-              
-              // Main Content
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 40),
-                      
-                      // Logo and Title
-                      _buildLogoSection(),
-                      
-                      const SizedBox(height: 60),
-                      
-                      // Welcome Message
-                      _buildWelcomeMessage(),
-                      
-                      const SizedBox(height: 80),
-                      
-                      // Service Cards
-                      _buildServiceCards(context),
-                      
-                      const SizedBox(height: 60),
-                      
-                      // Statistics
-                      _buildStatistics(),
-                      
-                      const SizedBox(height: 40),
-                    ],
+          child: SafeArea(
+            child: Column(
+              children: [
+                // Header
+                _buildHeader(context),
+
+                // Main Content
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 40),
+
+                        // Logo and Title
+                        _buildLogoSection(),
+
+                        const SizedBox(height: 60),
+
+                        // Welcome Message
+                        _buildWelcomeMessage(),
+
+                        const SizedBox(height: 80),
+
+                        // Service Cards
+                        _buildServiceCards(context),
+
+                        const SizedBox(height: 60),
+
+                        // Statistics
+                        _buildStatistics(),
+
+                        const SizedBox(height: 40),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-    ),
     );
   }
 
@@ -82,26 +82,27 @@ class BusinessLoungeScreen extends StatelessWidget {
             children: [
               _buildHeaderButton(
                 context,
-                'Settings', 
+                'Settings',
                 Icons.settings_outlined,
-                () => Navigator.pushReplacement(
-      context, MaterialPageRoute(
-        builder: (context)=>BusinessRegistrationScreen())),
+                () =>_showSnackBar(context, 'Settings clicked'),
               ),
               const SizedBox(width: 20),
-              
+
               _buildHeaderButton(
                 context,
-                'Account', 
+                'Account',
                 Icons.account_circle_outlined,
-                (
-                  
-                ) => _showSnackBar(context, 'Account clicked'),
+                () =>  Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BusinessRegistrationScreen(),
+                  ),
+                ),
               ),
               const SizedBox(width: 20),
               _buildHeaderButton(
                 context,
-                'Search', 
+                'Search',
                 Icons.search,
                 () => _showSnackBar(context, 'Search clicked'),
               ),
@@ -114,7 +115,7 @@ class BusinessLoungeScreen extends StatelessWidget {
 
   Widget _buildHeaderButton(
     BuildContext context,
-    String label, 
+    String label,
     IconData icon,
     VoidCallback onPressed,
   ) {
@@ -124,9 +125,7 @@ class BusinessLoungeScreen extends StatelessWidget {
         backgroundColor: Colors.white.withValues(alpha: 0.1),
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -245,28 +244,32 @@ class BusinessLoungeScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final isWideScreen = constraints.maxWidth > 800;
-        
+
         if (isWideScreen) {
           return IntrinsicHeight(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: services
-                  .map((service) => Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: _buildServiceCard(context, service),
-                        ),
-                      ))
+                  .map(
+                    (service) => Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: _buildServiceCard(context, service),
+                      ),
+                    ),
+                  )
                   .toList(),
             ),
           );
         } else {
           return Column(
             children: services
-                .map((service) => Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: _buildServiceCard(context, service),
-                    ))
+                .map(
+                  (service) => Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: _buildServiceCard(context, service),
+                  ),
+                )
                 .toList(),
           );
         }
@@ -280,10 +283,7 @@ class BusinessLoungeScreen extends StatelessWidget {
       color: Colors.white.withValues(alpha: 0.05),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
-        side: BorderSide(
-          color: Colors.white.withValues(alpha: 0.1),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.white.withValues(alpha: 0.1), width: 1),
       ),
       child: InkWell(
         onTap: () => _handleServiceTap(context, service.title),
@@ -304,11 +304,7 @@ class BusinessLoungeScreen extends StatelessWidget {
                     width: 1,
                   ),
                 ),
-                child: Icon(
-                  service.icon,
-                  color: Colors.white,
-                  size: 40,
-                ),
+                child: Icon(service.icon, color: Colors.white, size: 40),
               ),
               const SizedBox(height: 24),
               Text(
@@ -344,10 +340,7 @@ class BusinessLoungeScreen extends StatelessWidget {
       color: Colors.white.withValues(alpha: 0.05),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-        side: BorderSide(
-          color: Colors.white.withValues(alpha: 0.1),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.white.withValues(alpha: 0.1), width: 1),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 32),
@@ -413,9 +406,7 @@ class BusinessLoungeScreen extends StatelessWidget {
       SnackBar(
         content: Text(message),
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         backgroundColor: Colors.amber.shade700,
       ),
     );
@@ -457,9 +448,7 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w300,
             letterSpacing: 0.5,
           ),
-          bodyMedium: TextStyle(
-            fontWeight: FontWeight.w400,
-          ),
+          bodyMedium: TextStyle(fontWeight: FontWeight.w400),
         ),
       ),
       home: const BusinessLoungeScreen(),
