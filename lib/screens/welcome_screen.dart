@@ -1,4 +1,5 @@
 import 'package:corpnet_flut/screens/business_lounge.dart';
+import 'package:corpnet_flut/screens/landing_page_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -150,7 +151,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => BusinessLoungeScreen(),
+                            builder: (context) => LandingPage(),
                           ),
                         );
                       },
