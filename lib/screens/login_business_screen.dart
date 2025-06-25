@@ -1,12 +1,11 @@
-
+import 'package:corpnet_flut/screens/business_lounge.dart';
 import 'package:flutter/material.dart';
 
 class BusinessLoginScreen extends StatefulWidget {
-  const BusinessLoginScreen ({super.key});
+  const BusinessLoginScreen({super.key});
 
   @override
-  State<BusinessLoginScreen>createState() => BusinessLoginScreenState();
-  
+  State<BusinessLoginScreen> createState() => BusinessLoginScreenState();
 }
 
 class BusinessLoginScreenState extends State<BusinessLoginScreen> {
@@ -16,7 +15,7 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
   final _contactNumberController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  
+
   bool _isPasswordVisible = false;
 
   @override
@@ -35,9 +34,7 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.black,
-        ),
+        decoration: BoxDecoration(color: Colors.black),
         child: Stack(
           children: [
             // Top left white gradient
@@ -52,9 +49,9 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                     center: Alignment.center,
                     radius: 0.5,
                     colors: [
-                      Colors.white.withValues(alpha:0.15),
-                      Colors.white.withValues(alpha:0.08),
-                      Colors.white.withValues(alpha:0.08),
+                      Colors.white.withValues(alpha: 0.15),
+                      Colors.white.withValues(alpha: 0.08),
+                      Colors.white.withValues(alpha: 0.08),
                       Colors.transparent,
                     ],
                     stops: [0.0, 0.4, 0.7, 1.0],
@@ -73,10 +70,10 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                   gradient: RadialGradient(
                     center: Alignment.center,
                     radius: 1.0,
-                    colors: [           
-                      Colors.white.withValues(alpha:0.15),
-                      Colors.white.withValues(alpha:0.08),
-                      Colors.white.withValues(alpha:0.03),
+                    colors: [
+                      Colors.white.withValues(alpha: 0.15),
+                      Colors.white.withValues(alpha: 0.08),
+                      Colors.white.withValues(alpha: 0.03),
                       Colors.transparent,
                     ],
                     stops: [0.0, 0.4, 0.7, 1.0],
@@ -91,9 +88,9 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                 child: Column(
                   children: [
                     SizedBox(height: 40),
-                    
+
                     // Header with logo and menu
-                 Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Spacer(),
@@ -119,19 +116,31 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                           padding: EdgeInsets.all(8),
                           child: Column(
                             children: [
-                              Container(width: 25, height: 3, color: Colors.white),
+                              Container(
+                                width: 25,
+                                height: 3,
+                                color: Colors.white,
+                              ),
                               SizedBox(height: 4),
-                              Container(width: 25, height: 3, color: Colors.white),
+                              Container(
+                                width: 25,
+                                height: 3,
+                                color: Colors.white,
+                              ),
                               SizedBox(height: 4),
-                              Container(width: 25, height: 3, color: Colors.white),
+                              Container(
+                                width: 25,
+                                height: 3,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    
+
                     SizedBox(height: 60),
-                    
+
                     // Registration Title
                     Text(
                       'Registration',
@@ -143,9 +152,9 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                         fontFamily: 'Agrandir',
                       ),
                     ),
-                    
+
                     SizedBox(height: 30),
-                    
+
                     // Subtitle
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -161,9 +170,9 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                         ),
                       ),
                     ),
-                    
+
                     SizedBox(height: 50),
-                    
+
                     // Registration Form
                     Form(
                       key: _formKey,
@@ -175,28 +184,27 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                           //   keyboardType: TextInputType.name,
                           // ),
                           // SizedBox(height: 20),
-                          
+
                           // _buildTextField(
                           //   controller: _businessNameController,
                           //   hintText: 'Business Name *',
                           //   keyboardType: TextInputType.text,
                           // ),
                           // SizedBox(height: 20),
-                          
+
                           // _buildTextField(
                           //   controller: _contactNumberController,
                           //   hintText: 'Contact Number *',
                           //   keyboardType: TextInputType.phone,
                           // ),
                           // SizedBox(height: 20),
-                          
                           _buildTextField(
                             controller: _emailController,
                             hintText: 'Email *',
                             keyboardType: TextInputType.emailAddress,
                           ),
                           SizedBox(height: 20),
-                          
+
                           _buildTextField(
                             controller: _passwordController,
                             hintText: 'Password *',
@@ -206,9 +214,9 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                         ],
                       ),
                     ),
-                    
+
                     SizedBox(height: 50),
-                    
+
                     // Register Button
                     SizedBox(
                       width: double.infinity,
@@ -240,7 +248,7 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
                         ),
                       ),
                     ),
-                    
+
                     SizedBox(height: 40),
                   ],
                 ),
@@ -278,7 +286,7 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
             fontFamily: 'Agrandir',
           ),
           filled: true,
-          fillColor: Color(0xFF2D2D2D).withValues(alpha:0.7),
+          fillColor: Color(0xFF2D2D2D).withValues(alpha: 0.7),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(27.5),
             borderSide: BorderSide.none,
@@ -303,7 +311,9 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
           suffixIcon: isPassword
               ? IconButton(
                   icon: Icon(
-                    _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    _isPasswordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off,
                     color: Colors.white60,
                   ),
                   onPressed: () {
@@ -344,16 +354,18 @@ class BusinessLoginScreenState extends State<BusinessLoginScreen> {
         ),
         backgroundColor: Colors.green,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
-    
+
     // Clear form
-    _fullNameController.clear();
-    _businessNameController.clear();
-    _contactNumberController.clear();
+    // _fullNameController.clear();
+    // _businessNameController.clear();
+    // _contactNumberController.clear();
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => BusinessLoungeScreen()),
+    );
     _emailController.clear();
     _passwordController.clear();
   }

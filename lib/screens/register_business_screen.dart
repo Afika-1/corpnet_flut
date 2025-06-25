@@ -1,22 +1,23 @@
-
+import 'package:corpnet_flut/screens/login_business_screen.dart';
 import 'package:flutter/material.dart';
 
 class BusinessRegistrationScreen extends StatefulWidget {
-  const BusinessRegistrationScreen ({super.key});
+  const BusinessRegistrationScreen({super.key});
 
   @override
-  State<BusinessRegistrationScreen>createState() => BusinessRegistrationScreenState();
-  
+  State<BusinessRegistrationScreen> createState() =>
+      BusinessRegistrationScreenState();
 }
 
-class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> {
+class BusinessRegistrationScreenState
+    extends State<BusinessRegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
   final _fullNameController = TextEditingController();
   final _businessNameController = TextEditingController();
   final _contactNumberController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  
+
   bool _isPasswordVisible = false;
 
   @override
@@ -35,9 +36,7 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.black,
-        ),
+        decoration: BoxDecoration(color: Colors.black),
         child: Stack(
           children: [
             // Top left white gradient
@@ -52,9 +51,9 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                     center: Alignment.center,
                     radius: 0.5,
                     colors: [
-                      Colors.white.withValues(alpha:0.15),
-                      Colors.white.withValues(alpha:0.08),
-                      Colors.white.withValues(alpha:0.08),
+                      Colors.white.withValues(alpha: 0.15),
+                      Colors.white.withValues(alpha: 0.08),
+                      Colors.white.withValues(alpha: 0.08),
                       Colors.transparent,
                     ],
                     stops: [0.0, 0.4, 0.7, 1.0],
@@ -73,10 +72,10 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                   gradient: RadialGradient(
                     center: Alignment.center,
                     radius: 1.0,
-                    colors: [           
-                      Colors.white.withValues(alpha:0.15),
-                      Colors.white.withValues(alpha:0.08),
-                      Colors.white.withValues(alpha:0.03),
+                    colors: [
+                      Colors.white.withValues(alpha: 0.15),
+                      Colors.white.withValues(alpha: 0.08),
+                      Colors.white.withValues(alpha: 0.03),
                       Colors.transparent,
                     ],
                     stops: [0.0, 0.4, 0.7, 1.0],
@@ -91,9 +90,9 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                 child: Column(
                   children: [
                     SizedBox(height: 40),
-                    
+
                     // Header with logo and menu
-                 Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Spacer(),
@@ -119,19 +118,31 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                           padding: EdgeInsets.all(8),
                           child: Column(
                             children: [
-                              Container(width: 25, height: 3, color: Colors.white),
+                              Container(
+                                width: 25,
+                                height: 3,
+                                color: Colors.white,
+                              ),
                               SizedBox(height: 4),
-                              Container(width: 25, height: 3, color: Colors.white),
+                              Container(
+                                width: 25,
+                                height: 3,
+                                color: Colors.white,
+                              ),
                               SizedBox(height: 4),
-                              Container(width: 25, height: 3, color: Colors.white),
+                              Container(
+                                width: 25,
+                                height: 3,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    
+
                     SizedBox(height: 60),
-                    
+
                     // Registration Title
                     Text(
                       'Registration',
@@ -143,9 +154,9 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                         fontFamily: 'Agrandir',
                       ),
                     ),
-                    
+
                     SizedBox(height: 30),
-                    
+
                     // Subtitle
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -161,9 +172,9 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                         ),
                       ),
                     ),
-                    
+
                     SizedBox(height: 50),
-                    
+
                     // Registration Form
                     Form(
                       key: _formKey,
@@ -175,28 +186,28 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                             keyboardType: TextInputType.name,
                           ),
                           SizedBox(height: 20),
-                          
+
                           _buildTextField(
                             controller: _businessNameController,
                             hintText: 'Business Name *',
                             keyboardType: TextInputType.text,
                           ),
                           SizedBox(height: 20),
-                          
+
                           _buildTextField(
                             controller: _contactNumberController,
                             hintText: 'Contact Number *',
                             keyboardType: TextInputType.phone,
                           ),
                           SizedBox(height: 20),
-                          
+
                           _buildTextField(
                             controller: _emailController,
                             hintText: 'Email *',
                             keyboardType: TextInputType.emailAddress,
                           ),
                           SizedBox(height: 20),
-                          
+
                           _buildTextField(
                             controller: _passwordController,
                             hintText: 'Password *',
@@ -206,9 +217,9 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                         ],
                       ),
                     ),
-                    
+
                     SizedBox(height: 50),
-                    
+
                     // Register Button
                     SizedBox(
                       width: double.infinity,
@@ -240,7 +251,7 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
                         ),
                       ),
                     ),
-                    
+
                     SizedBox(height: 40),
                   ],
                 ),
@@ -278,7 +289,7 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
             fontFamily: 'Agrandir',
           ),
           filled: true,
-          fillColor: Color(0xFF2D2D2D).withValues(alpha:0.7),
+          fillColor: Color(0xFF2D2D2D).withValues(alpha: 0.7),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(27.5),
             borderSide: BorderSide.none,
@@ -303,7 +314,9 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
           suffixIcon: isPassword
               ? IconButton(
                   icon: Icon(
-                    _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    _isPasswordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off,
                     color: Colors.white60,
                   ),
                   onPressed: () {
@@ -344,17 +357,20 @@ class BusinessRegistrationScreenState extends State<BusinessRegistrationScreen> 
         ),
         backgroundColor: Colors.green,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
-    
+
     // Clear form
     _fullNameController.clear();
     _businessNameController.clear();
     _contactNumberController.clear();
     _emailController.clear();
     _passwordController.clear();
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => BusinessLoginScreen()),
+    );
   }
 }
