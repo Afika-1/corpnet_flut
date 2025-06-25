@@ -61,8 +61,10 @@ class LandingPage extends StatelessWidget {
                         ),
                         const SizedBox(width: 15),
                         const Text(
+
                           'Ingalozi Mali',
                           style: TextStyle(
+                            
                             fontSize: 24,
                             fontWeight: FontWeight.w300,
                             color: Colors.white,

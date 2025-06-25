@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/register_business_screen.dart';
 
 class BusinessLoungeScreen extends StatelessWidget {
   const BusinessLoungeScreen({super.key});
@@ -83,14 +84,19 @@ class BusinessLoungeScreen extends StatelessWidget {
                 context,
                 'Settings', 
                 Icons.settings_outlined,
-                () => _showSnackBar(context, 'Settings clicked'),
+                () => Navigator.pushReplacement(
+      context, MaterialPageRoute(
+        builder: (context)=>BusinessRegistrationScreen())),
               ),
               const SizedBox(width: 20),
+              
               _buildHeaderButton(
                 context,
                 'Account', 
                 Icons.account_circle_outlined,
-                () => _showSnackBar(context, 'Account clicked'),
+                (
+                  
+                ) => _showSnackBar(context, 'Account clicked'),
               ),
               const SizedBox(width: 20),
               _buildHeaderButton(
@@ -390,13 +396,16 @@ class BusinessLoungeScreen extends StatelessWidget {
   }
 
   void _handleServiceTap(BuildContext context, String service) {
-    _showSnackBar(context, '$service selected');
+    // _showSnackBar(context, '$service selected');
     // Navigate to service page
     // Navigator.of(context).push(
     //   MaterialPageRoute(
     //     builder: (context) => ServiceDetailPage(service: service),
     //   ),
     // );
+    // Navigator.pushReplacement(
+    //   context, MaterialPageRoute(
+    //     builder: (context)=>BusinessLoungeScreen()));
   }
 
   void _showSnackBar(BuildContext context, String message) {

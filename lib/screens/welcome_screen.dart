@@ -21,7 +21,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
       vsync: this,
     );
     _animation = Tween<double>(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.bounceOut),
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack),
     );
     _animationController.repeat(reverse: true);
   }
@@ -42,7 +42,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
           image: DecorationImage(
             image: AssetImage('lib/asset/images/welcome.png'),
             fit: BoxFit.fill,
-            alignment: Alignment.center, // Position the image
+            alignment: Alignment.center,
             colorFilter: ColorFilter.mode(
               Colors.black.withValues(alpha: 0.3), // Add overlay
               BlendMode.darken,
@@ -90,14 +90,14 @@ class WelcomeScreenState extends State<WelcomeScreen>
                     children: [
                       // Loading dots
                       SizedBox(
-                        height: 20,
+                        height: 60,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             _buildLoadingDot(0),
-                            SizedBox(width: 12),
+                            SizedBox(width: 40),
                             _buildLoadingDot(1),
-                            SizedBox(width: 12),
+                            SizedBox(width: 40),
                             _buildLoadingDot(2),
                           ],
                         ),
@@ -114,7 +114,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
                           fontSize: 64,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 2,
-                          fontFamily: 'Agrandir-GrandHeavy',
+                          fontFamily: 'SF Pro Display',
                           height: 1.1,
                         ),
                       ),
@@ -130,7 +130,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
                           fontSize: 20,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.8,
-                          fontFamily: 'Agrandir',
+                          fontFamily: 'SF Pro Display',
                           height: 1.3,
                         ),
                       ),
@@ -197,8 +197,8 @@ class WelcomeScreenState extends State<WelcomeScreen>
         double animationValue = (_animation.value + delay) % 1.0;
 
         return Container(
-          width: 12,
-          height: 12,
+          width: 20,
+          height: 20,
           decoration: BoxDecoration(
             color: Color(
               0xFF00A693,
