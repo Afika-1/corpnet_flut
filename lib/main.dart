@@ -1,3 +1,4 @@
+import 'package:corpnet_flut/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'widgets/splash_screen.dart';
 
@@ -88,7 +89,7 @@ class CorpNetApp extends StatelessWidget {
         '/business': (context) => BusinessScreen(),
         '/profile': (context) => ProfileScreen(),
       },
-      home: SplashScreen(),
+      home: WelcomeScreen(),
       //
     );
   }
