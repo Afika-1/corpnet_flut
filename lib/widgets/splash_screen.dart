@@ -1,5 +1,7 @@
 // import 'package:corpnet_flut/screens/account_selection.dart';
 // import 'package:corpnet_flut/screens/profile_screen.dart';
+import 'package:corpnet_flut/screens/account_selection.dart';
+import 'package:corpnet_flut/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 // import '../screens/business_page.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CorpNet App',
+      title: 'Corp Community App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Inter',
@@ -75,7 +77,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         // MaterialPageRoute(builder: (context) => const AccountSelectionScreen()), // Navigate to HomeScreen
-        MaterialPageRoute(builder: (context) =>  WelcomeScreen()),
+        MaterialPageRoute(builder: (context) =>  AccountSelectionScreen()),
       );
     });
   }
@@ -85,7 +87,8 @@ class _SplashScreenState extends State<SplashScreen> {
     // const maroon = Color(0xFF7F1D1D); // Maroon color
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0A121D), 
+      // backgroundColor: const Color(0xFF0A121D), 
+            backgroundColor: Colors.black, 
       
       body: Center(
         
@@ -94,7 +97,7 @@ class _SplashScreenState extends State<SplashScreen> {
           text: TextSpan(
             style: const TextStyle(
               fontFamily: 'Inter',
-              fontSize: 40,
+              fontSize: 60,
               fontWeight: FontWeight.bold,
             ),
             children: [
@@ -103,7 +106,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: TextStyle(color: Colors.white),
               ),
               TextSpan(
-                text: 'Net',
+                text: 'Community',
                 style: TextStyle(color: Colors.yellow),
               ),
             ],

@@ -214,7 +214,9 @@ class AccountSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A0E1A),
+      // backgroundColor: const Color(0xFF0A0E1A),
+            backgroundColor: Colors.black,
+
       appBar: AppBar(
         backgroundColor: const Color(0xFF0A0E1A),
         elevation: 0,
@@ -229,9 +231,9 @@ class AccountSelectionScreen extends StatelessWidget {
               ),
             ),
             const Text(
-              'Net',
+              'Community',
               style: TextStyle(
-                color: Color(0xFFE53E3E),
+                color: Color(0xFFD4AF37),
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -245,7 +247,7 @@ class AccountSelectionScreen extends StatelessWidget {
           ),
          const CircleAvatar(
             radius: 16,
-            backgroundColor: Color(0xFFE53E3E),
+            backgroundColor: Color(0xFFD4AF37),
             child: Icon(Icons.person, color: Colors.white, size: 20),
           ),
           const SizedBox(width: 16),
@@ -312,7 +314,7 @@ class AccountSelectionScreen extends StatelessWidget {
                     child: const Text(
                       'Sign In',
                       style: TextStyle(
-                        color: Color(0xFFE53E3E),
+                        color: Color(0xFFD4AF37),
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
@@ -340,7 +342,7 @@ class AccountSelectionScreen extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A1F2E),
+          color: const Color(0xFF0A0E1A),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: Colors.white.withValues(alpha: 0.1),
@@ -353,7 +355,7 @@ class AccountSelectionScreen extends StatelessWidget {
               width: 48,
               height: 48,
               decoration: const BoxDecoration(
-                color: Color(0xFFE53E3E),
+                color: Color(0xFFD4AF37),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -416,7 +418,7 @@ class AccountSelectionScreen extends StatelessWidget {
               onPressed: () => Navigator.of(context).pop(),
               child: const Text(
                 'OK',
-                style: TextStyle(color: Color(0xFFE53E3E)),
+                style: TextStyle(color: Color(0xFFD4AF37)),
               ),
             ),
           ],

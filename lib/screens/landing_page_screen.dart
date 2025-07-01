@@ -251,13 +251,13 @@ class _LandingPageState extends State<LandingPage> {
     if (isMobile) {
       return Column(
         children: [
-          _buildActionButton('BUSINESS\nLOUNGE \nFor Businesses', () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => BusinessLoungeScreen()),
-            );
-          }, isMobile: true),
-          const SizedBox(height: 20),
+          // _buildActionButton('BUSINESS\nLOUNGE \nFor Businesses', () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(builder: (context) => BusinessLoungeScreen()),
+          //   );
+          // }, isMobile: true),
+          // const SizedBox(height: 20),
           _buildActionButton('INVESTORS\nLOUNGE \nFor Investors', () {
             Navigator.push(
               context,
@@ -272,12 +272,12 @@ class _LandingPageState extends State<LandingPage> {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _buildActionButton('BUSINESS\nLOUNGE', () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => BusinessLoungeScreen()),
-            );
-          }),
+          // _buildActionButton('BUSINESS\nLOUNGE', () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(builder: (context) => BusinessLoungeScreen()),
+          //   );
+          // }),
           SizedBox(width: isTablet ? 30 : 40),
           _buildActionButton('INVESTORS\nLOUNGE', () {
             Navigator.push(
