@@ -105,7 +105,7 @@ class BusinessLoginScreenState
                     padding: EdgeInsets.symmetric(
                       horizontal: isLargeScreen ? 50 : 24,
                     ),
-                    child: Container(
+                    child: SizedBox(
                       width: isLargeScreen ? 600 : double.infinity,
                       child: Column(
                         children: [
@@ -197,7 +197,7 @@ class BusinessLoginScreenState
                           SizedBox(height: isLargeScreen ? 40 : 30),
 
                           // Registration Form
-                          Container(
+                          SizedBox(
                             width: formWidth,
                             child: Form(
                               key: _formKey,
@@ -250,7 +250,7 @@ class BusinessLoginScreenState
                           SizedBox(height: isLargeScreen ? 40 : 30),
 
                           // Register Button
-                          Container(
+                          SizedBox(
                             width: formWidth,
                             height: isLargeScreen ? 60 : 55,
                             child: ElevatedButton(

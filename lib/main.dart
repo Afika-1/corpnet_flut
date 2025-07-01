@@ -1,6 +1,5 @@
 import 'package:corpnet_flut/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'widgets/splash_screen.dart';
 
 import 'screens/home_screen.dart';
 import 'screens/network_page.dart';

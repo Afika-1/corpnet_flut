@@ -21,7 +21,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
       vsync: this,
     );
     _animation = Tween<double>(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeInOutBack),
+      CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
     );
     _animationController.repeat(reverse: true);
   }
@@ -194,7 +194,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
       animation: _animation,
       builder: (context, child) {
         double delay = index * 0.2;
-        double animationValue = (_animation.value + delay) % 1.0;
+        double animationValue = (_animation.value + delay) % 2.0;
 
         return Container(
           width: 20,

@@ -1,3 +1,4 @@
+import 'package:corpnet_flut/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/register_business_screen.dart';
 
@@ -84,7 +85,14 @@ class BusinessLoungeScreen extends StatelessWidget {
                 context,
                 'Settings',
                 Icons.settings_outlined,
-                () =>_showSnackBar(context, 'Settings clicked'),
+                () =>
+                // _showSnackBar(context, 'Settings clicked'),
+                 Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WelcomeScreen(),
+                  ),
+                ),
               ),
               const SizedBox(width: 20),
 
@@ -203,7 +211,7 @@ class BusinessLoungeScreen extends StatelessWidget {
         children: [
           TextSpan(
             text: 'Welcome ',
-            style: TextStyle(color: Colors.amber.shade600),
+            style: TextStyle(color: Colors.white),
           ),
           TextSpan(
             text: 'Lester Philander',

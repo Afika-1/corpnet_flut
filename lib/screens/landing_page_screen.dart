@@ -1,6 +1,5 @@
 import 'package:corpnet_flut/screens/business_lounge.dart';
 import 'package:corpnet_flut/screens/login_business_screen.dart';
-import 'package:corpnet_flut/screens/login_screen.dart';
 import 'package:corpnet_flut/screens/register_business_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -252,14 +251,14 @@ class _LandingPageState extends State<LandingPage> {
     if (isMobile) {
       return Column(
         children: [
-          _buildActionButton('BUSINESS\nLOUNGE', () {
+          _buildActionButton('BUSINESS\nLOUNGE \nFor Businesses', () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => BusinessLoungeScreen()),
             );
           }, isMobile: true),
           const SizedBox(height: 20),
-          _buildActionButton('INVESTORS\nLOUNGE', () {
+          _buildActionButton('INVESTORS\nLOUNGE \nFor Investors', () {
             Navigator.push(
               context,
               MaterialPageRoute(
