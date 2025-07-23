@@ -1,6 +1,5 @@
-import 'package:corpnet_flut/screens/business_lounge.dart';
-import 'package:corpnet_flut/screens/login_business_screen.dart';
-import 'package:corpnet_flut/screens/register_business_screen.dart';
+import 'package:corp_community/screens/login_business_screen.dart';
+import 'package:corp_community/screens/register_business_screen.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {

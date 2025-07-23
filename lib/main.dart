@@ -1,5 +1,4 @@
-import 'package:corpnet_flut/screens/welcome_screen.dart';
-import 'package:corpnet_flut/widgets/splash_screen.dart';
+import 'package:corp_community/widgets/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/home_screen.dart';
@@ -10,11 +9,11 @@ import 'screens/profile_screen.dart';
 
 
 void main() {
-  runApp(CorpNetApp());
+  runApp(CorpCommunityApp());
 }
 
-class CorpNetApp extends StatelessWidget {
-  const CorpNetApp({super.key});
+class CorpCommunityApp extends StatelessWidget {
+  const CorpCommunityApp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:corpnet_flut/screens/login_business_screen.dart';
+import 'package:corp_community/screens/login_business_screen.dart';
 import 'package:flutter/material.dart';
 
 class BusinessRegistrationScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:corpnet_flut/screens/welcome_screen.dart';
+import 'package:corp_community/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/register_business_screen.dart';
 

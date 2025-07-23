@@ -1,7 +1,6 @@
 // import 'package:corpnet_flut/screens/account_selection.dart';
 // import 'package:corpnet_flut/screens/profile_screen.dart';
 import 'package:corpnet_flut/screens/account_selection.dart';
-import 'package:corpnet_flut/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 // import '../screens/business_page.dart';
@@ -9,7 +8,6 @@ import 'dart:async';
 // import '../screens/account_selection.dart';
 // import '../screens/profile_screen.dart';
 // import '../screens/register_business_screen.dart';
-import '../screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());

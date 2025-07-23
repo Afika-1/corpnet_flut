@@ -1,5 +1,5 @@
-// import 'package:corpnet_flut/screens/business_lounge.dart';
-import 'package:corpnet_flut/screens/landing_page_screen.dart';
+// import 'package:corp_community/screens/business_lounge.dart';
+import 'package:corp_community/screens/landing_page_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
