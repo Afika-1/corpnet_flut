@@ -153,6 +153,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
                           ),
                         );
                       },
+                      
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
                         foregroundColor: Color(0xFFD4AF37),
